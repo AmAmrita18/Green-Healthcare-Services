@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Contact = () => {
   return (
-    <div className="w-full py-12">
+    <div className="w-full md:py-12">
         <div className="w-[85%] max-w-[1300px] flex flex-col md:flex-row justify-between mx-auto min-h-[80vh]">
             <div className="w-[100%] md:w-[45%] flex flex-col py-7">
                 <h1 className='text-[64px] font-[700] leading-[75.14px]'>Let&apos;s Talk</h1>

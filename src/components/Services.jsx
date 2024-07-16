@@ -9,7 +9,7 @@ const Services = () => {
         <h2 className="text-[48px] leading-[56px] font-[700] text-center">
           Our Services
         </h2>
-        <div className="grid grid-cols-2 gap-x-12 gap-y-12 mt-12">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-x-12 gap-y-12 mt-12">
           {services.map(({ id, title, description }) => (
             <div key={id} className="px-12 py-12  gap-y-2 rounded-md shadow-lg">
               <div className="bg-[#489E55] py-2 px-2 w-[48px] h-[48px] rounded-lg flex justify-center items-center">

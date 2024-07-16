@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Contact2 = () => {
   return (
-    <div className="w-full py-12" id="contact2">
+    <div className="w-full md:py-12" id="contact2">
         <div className="w-[85%] max-w-[1300px] flex flex-col md:flex-row justify-between mx-auto min-h-[80vh]">
         <div className="w-[100%] md:w-[47%]">
                 <form className='flex flex-col gap-y-2'>
@@ -41,7 +41,7 @@ const Contact2 = () => {
                     </div>
                 </form>
             </div>
-            <div className="w-[100%] md:w-[45%] flex flex-col juse py-7">
+            <div className="w-[100%] md:w-[45%] flex flex-col juse py-7 md:mt-0 mt-8">
                 <h1 className='text-[64px] font-[700] leading-[75.14px] text-end'>Join Our Team</h1>
                 <p className='ml-4 text-[20px] leading-[23.48px] font-[400] mt-6 text-end'>
                 Want to be a caregiver? Apply with Green Health Care Service Ltd. We may have a position for you. 
