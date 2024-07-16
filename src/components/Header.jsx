@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 
+
 const NAV_OPTIONS = [
   {
     id: `NAV001`,
@@ -27,7 +28,7 @@ const NAV_OPTIONS = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [headerHeight, setHeaderHeight] = useState(0);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -35,11 +36,22 @@ const Header = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
       setIsMenuOpen(false);
     }
   };
-
+  useEffect(() => {
+    const header = document.querySelector('.fixed');
+    if (header) {
+      setHeaderHeight(header.offsetHeight);
+    }
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
