@@ -21,7 +21,7 @@ const ABOUT_US = [
   },
 ];
 
-const About = () => {
+const About = ({scrollToSection}) => {
   const bgImage = "/about.png";
   return (
     <div className="w-full" id="about">
@@ -58,11 +58,8 @@ const About = () => {
             ))}
           </div>
           <div className="mt-14">
-            <Link
-              to="#"
-              className="py-4 px-6 bg-[#FDF04F] rounded-md font-[700] text-[16px] leading-[18.78px] text-[#262E27]"
-            >
-              Learn More
+          <Link >
+              <button className="py-4 px-6 bg-[#FDF04F] font-[700] rounded-md text-[16px] text-[#262E27] leading-[18.78px]" onClick={() => scrollToSection("services")}>Learn More</button>
             </Link>
           </div>
         </div>

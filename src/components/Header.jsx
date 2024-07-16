@@ -26,44 +26,13 @@ const NAV_OPTIONS = [
   },
 ];
 
-const Header = () => {
+const Header = ({scrollToSection}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(0);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-  
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-      setIsMenuOpen(false);
-    }
-  };
-  useEffect(() => {
-    const header = document.querySelector('.fixed');
-    if (header) {
-      setHeaderHeight(header.offsetHeight);
-    }
-  }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsMenuOpen(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+ 
 
   return (
     <div className="w-full fixed top-0 left-0 right-0 bg-white z-50 shadow-md">
@@ -72,7 +41,7 @@ const Header = () => {
           <img
             src="/logo.png"
             alt=""
-            className="w-[80px] h-[60px] object-cover"
+            className="md:w-[80px] md:h-[60px] w-[60px] h-[40px] object-cover"
           />
         </div>
         <div className="hidden md:flex gap-x-8 font-500 text-[16px] leading-[18.78px] items-center">

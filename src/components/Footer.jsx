@@ -1,27 +1,8 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
-import { Link, useNavigate } from "react-router-dom";
 
-const Footer = () => {
-  const navigate = useNavigate();
-
-  const scrollToSection = (sectionId) => {
-    navigate("/");
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const headerOffset = 100;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
-    }, 100);
-  };
+const Footer = ({scrollToSection}) => {
+  
   return (
     <div className="w-full md:mt-36 mt-10 py-12 bg-[#F3FBF4]">
       <div className="w-[85%] mx-auto flex md:flex-row flex-col md:gap-y-0 gap-y-7 justify-between items-center">
@@ -44,7 +25,7 @@ const Footer = () => {
         </div>
        
         <div className="w-[100%]  md:w-[41%] flex flex-col md:gap-y-0 gap-y-5 justify-between md:min-h-[40vh]">
-        <p className="font-[600] text-center text-[20px] leading-[23.48px] text-[#262E27]">
+        <p className="font-[600] md:hidden text-center text-[20px] leading-[23.48px] text-[#262E27]">
               Quick Links:
             </p>
           <div className="w-full md:mt-5 flex md:gap-x-5 gap-x-5 md:justify-end justify-center">

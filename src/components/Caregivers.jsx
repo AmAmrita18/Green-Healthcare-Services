@@ -2,11 +2,11 @@ import React from "react";
 import { MdOutlineLibraryAddCheck } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Caregivers = () => {
+const Caregivers = ({scrollToSection}) => {
   const bgImage = "/caregiver.png";
   return (
     <div className="w-full">
-      <div className="w-[85%] max-w-[1300px] mx-auto flex md:flex-row-reverse flex-col md:gap-y-0 gap-y-8 gap-x-14 items-center min-h-[80vh] py-20">
+      <div className="w-[85%] max-w-[1300px] mx-auto flex md:flex-row-reverse flex-col md:gap-y-0 gap-y-8 gap-x-14 items-center min-h-[80vh] md:py-20 py-10">
         <div className="w-[100%] md:w-[50%] relative flex justify-start mt-16">
           <div
             className="w-[311px] md:w-[368px] lg:w-[558px] h-[480px] md:h-[600px] absolute top-[-50px] left-[50px] right-0"
@@ -35,11 +35,8 @@ const Caregivers = () => {
             difference in the lives we touch.{" "}
           </p>
           <div className="mt-8">
-            <Link
-              to="#"
-              className="py-4 px-6 bg-[#FDF04F] rounded-md font-[700] text-[16px] text-[#262E27]"
-            >
-              Learn More
+          <Link >
+              <button className="py-4 px-6 bg-[#FDF04F] font-[700] rounded-md text-[16px] text-[#262E27] leading-[18.78px]" onClick={() => scrollToSection("faq")}>Learn More</button>
             </Link>
           </div>
         </div>
